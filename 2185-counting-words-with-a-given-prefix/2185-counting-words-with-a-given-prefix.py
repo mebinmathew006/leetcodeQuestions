@@ -4,5 +4,5 @@ class Solution:
         for i in words:
             if i.startswith(pref):
                 count+=1
+
         return count
-        
