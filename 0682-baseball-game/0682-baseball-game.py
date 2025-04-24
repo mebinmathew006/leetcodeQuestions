@@ -1,22 +1,17 @@
 class Solution:
     def calPoints(self, operations: List[str]) -> int:
-        result=[]
-        
+        score=[]
         for i in operations:
-            if i =='+':
-                result.append(result[-1]+result[-2])
-               
-            elif i=='D':
-                result.append(result[-1]*2)
-             
-            elif i=='C':
-                result.pop()
+            if i =='+' and len(score)>1:
+                score.append(score[-1]+score[-2])
+            elif i =='D' and len(score)>0:
+                score.append(2*score[-1])
+            elif i =='C':
+                score.pop()
             else:
-                result.append(int(i))
+                try:
+                    score.append(int(i))
+                except (error):
+                    continue
 
-        return sum(result)
-
-
-
-
-        
+        return sum(score)
