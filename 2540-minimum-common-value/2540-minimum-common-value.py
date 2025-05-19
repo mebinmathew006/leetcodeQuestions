@@ -1,8 +1,18 @@
 class Solution:
     def getCommon(self, nums1: List[int], nums2: List[int]) -> int:
-        set1=set(nums1)
-        set2=set(nums2)
-        set3=set1.intersection(set2)
-        if set3:
-            return min(set3)
+    
+        
+        nums1=set(nums1)
+        nums2=set(nums2)
+        if len(nums1)>len(nums2):
+            for i in nums1:
+                if i in nums2:
+                    return i
+
+        else:
+            for i in nums2:
+                if i in nums1:
+                    return i
+                    
         return -1
+
