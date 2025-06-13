@@ -1,13 +1,14 @@
 class Solution:
     def isBalanced(self, num: str) -> bool:
-        odd_sum=0
-        even_sum=0
-        for i in range(len(num)):
-            if i%2==0:
-                odd_sum=odd_sum+int(num[i])
+        odd=0
+        even=0
+        for index,value in enumerate(num):
+            if index%2==0:
+                even+=int(value)
             else:
-                even_sum=even_sum+int(num[i])
+                odd +=int(value)
 
-        if odd_sum==even_sum:
+        if odd==even:
             return True
+
         return False
